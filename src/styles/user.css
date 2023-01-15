@@ -1,0 +1,221 @@
+.signin {
+    position: relative;
+    padding: 16px;
+    max-width: 400px;
+    min-height: 400px;
+    box-shadow: 0px 12px 20px 0px rgba(0, 0, 0, 0.5);
+    margin: 5% auto 0;
+    border-radius: 25px;
+    background-size: cover;
+}
+
+.signup {
+    position: relative;
+    padding: 16px;
+    max-width: 400px;
+    min-height: 400px;
+    box-shadow: 0px 12px 20px 0px rgba(0, 0, 0, 0.5);
+    margin: 3% auto 0;
+    border-radius: 25px;
+    background-size: cover;
+}
+
+input[type=text], input[type=password], input[type=number] {
+    width: 100%;
+    padding: 12px 20px;
+    margin: 8px 0;
+    display: inline-block;
+    border: 1px solid #ccc;
+    box-sizing: border-box;
+}
+
+/*button {*/
+/*    background-color: #08a4b7;*/
+/*    color: white;*/
+/*    padding: 10px 16px;*/
+/*    margin: 8px 0;*/
+/*    border: none;*/
+/*    cursor: pointer;*/
+/*    font-size: 20px;*/
+/*    width: 100%;*/
+/*}*/
+
+button:hover {
+    opacity: 0.8;
+}
+
+.signup-p {
+    font-size: 12px;
+}
+
+.signup-btn {
+    background-color: #0b828f;
+    color: white;
+    padding: 10px 16px;
+    margin: 6px 0;
+    border: none;
+    cursor: pointer;
+    font-size: 20px;
+    width: 100%;
+}
+
+/* HOME PAGE */
+.home-h1 {
+    text-align: center;
+    margin: auto;
+    height: 50px;
+    line-height: 6;
+    color: #dcdcdc;
+    font-family: Impact, sans-serif, Arial, Helvetica;
+    font-size: 50px;
+}
+
+.home-h3 {
+    text-align: center;
+    margin-bottom: auto;
+    line-height: 8;
+    height: 130px;
+    color: #dcdcdc;
+    font-family: Impact, sans-serif, Arial, Helvetica;
+    font-size: 30px;
+
+}
+
+.home-center {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100px;
+}
+
+.signup-home-btn {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #0b828f;
+    color: white;
+    border: none;
+    cursor: pointer;
+    font-size: 16px;
+    width: 150px;
+    height: 40px;
+    font-family: sans-serif, Arial, Helvetica;
+}
+
+.signup-home-btn:hover {
+    box-shadow: 0 6px 10px 0 rgba(0,0,0,0.24), 0 17px 50px 0 rgba(0,0,0,0.19);
+}
+
+
+/* Style all font awesome icons */
+.fa {
+    padding: 5px 5px;
+    margin: 2px;
+    font-size: 20px;
+    width: 30px;
+    text-align: center;
+    text-decoration: none;
+    border-radius: 50%;
+
+}
+
+/* Add a hover effect if you want */
+.fa:hover {
+    opacity: 0.7;
+}
+
+/* Set a specific color for each brand */
+
+/* Facebook */
+.fa-facebook {
+    background: #3B5998;
+    color: white;
+}
+
+/* Twitter */
+.fa-twitter {
+    background: #55ACEE;
+    color: white;
+}
+
+/* Instagram */
+.fa-instagram {
+    background: #7b55ee;
+    color: white;
+}
+
+/* YouTube */
+.fa-youtube {
+    background: #d91919;
+    color: white;
+}
+
+
+/* Book Trainng and My Schedule */
+
+.tableBody{
+    margin:40px;
+}
+
+.tableBody h1{
+    color:white;
+    box-shadow: 0 0 1px rgba(34, 25, 25, 0.4);
+    border-radius:5px;
+    max-width:600px;
+    background-color:#0B828F;
+    word-wrap:break-word;
+    padding:12px;
+    text-align:center !important;
+    margin-left: auto !important;
+    margin-right: auto !important;
+}
+
+.tableBody table {
+    border-spacing: 0;
+    /*border-collapse: separate;*/
+    border-radius: 25px;
+    font-family: arial, sans-serif;
+    border-collapse: collapse;
+    width: 100%;
+}
+
+.tableBody td{
+    text-align: center;
+
+}
+
+.tableBody th{
+    text-align: center;
+    padding:5px;
+}
+
+.submitUpdate{
+    background-color:#0B828F;
+    border:0px;
+    color:white;
+    padding:8px;
+    border-radius:6px;
+}
+
+.tableBody input[type="text"] {
+    width:100% !important;
+    height:35px !important;
+    border-radius:5px;
+}
+
+.myBody form{
+    margin:20px !important;
+}
+
+.myForm{
+    margin: 20px;
+    max-width:100%;
+    overflow-x: auto;
+}
+
+@media only screen and (max-width:768px){
+    .myForm{
+        margin:0px;
+    }
+}
+
