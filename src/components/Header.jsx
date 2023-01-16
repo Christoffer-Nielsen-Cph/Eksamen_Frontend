@@ -12,6 +12,14 @@ function Header({loggedIn, setLoggedIn}) {
         <nav className="topnav">
             <NavLink className="nav-home" to="/"><i></i> HOME</NavLink>
 
+            {loggedIn ? <NavLink className="nav-home" to="developerpage"> DEVELOPER PAGE </NavLink> : null}
+
+            {loggedIn ? <NavLink className="nav-home" to="myrecords"> MY PROJECT HOURS </NavLink> : null}
+
+            {userFacade.hasUserAccess('admin',loggedIn) && (<NavLink className="nav-home" to="useroverview"> USER OVERVIEW </NavLink>)}
+
+            {userFacade.hasUserAccess('admin',loggedIn) && (<NavLink className="nav-home" to="projectoverview"> PROJECT OVERVIEW </NavLink>)}
+
             {loggedIn ? (<NavLink className="profileIcon" to="profile"><i className="fa fa-user"></i> {userFacade.getUserName()}</NavLink>) : <></>}
 
             {!loggedIn ? (<SignUpBtn/>) : (<div></div>)}

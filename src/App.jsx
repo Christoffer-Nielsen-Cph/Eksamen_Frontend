@@ -9,6 +9,12 @@ import SignUp from "./pages/SignUp.jsx";
 import SignUpConfirmation from "./pages/SignUpConfirmation";
 import Profile from "./pages/Profile.jsx";
 import cphb from "./images/cphb.png"
+import ProjectOverview from "./pages/ProjectOverview.jsx";
+import adminFacade from "./utils/adminFacade.js";
+import DeveloperPage from "./pages/DeveloperPage.jsx";
+import UserOverview from "./pages/UserOverview.jsx";
+import developerFacade from "./utils/developerFacade.js";
+import ProjectHourPage from "./pages/ProjectHourPage.jsx";
 
 function App() {
 
@@ -24,8 +30,12 @@ function App() {
             <Routes>
                 <Route path="/" element={<Home userFacade={userFacade} setLoggedIn={setLoggedIn} loggedIn={loggedIn}/>}/>
                 <Route path="profile" element={<Profile setLoggedIn={setLoggedIn}/>}/>
+                <Route path="myrecords" element={<ProjectHourPage/>}/>
+                <Route path="developerpage" element={<DeveloperPage developerFacade={developerFacade} userFacade={userFacade}/>}/>
+                <Route path="projectoverview" element={userFacade.hasUserAccess("admin",loggedIn) && <ProjectOverview adminFacade={adminFacade} userFacade={userFacade}/>}/>
                 <Route path="signin" element={!loggedIn ? <SignIn setLoggedIn={setLoggedIn}/> : <Home loggedIn={loggedIn}/>}/>
                 <Route path="/signup" element={<SignUp/>}/>
+                <Route path="useroverview" element={userFacade.hasUserAccess("admin",loggedIn) && <UserOverview userFacade={userFacade}/>}/>
                 <Route path="/SignUpConfirmation" element={<SignUpConfirmation/>}/>
                 <Route path="*" element={<h1>Page Not Found !!!!</h1>}/>
             </Routes>

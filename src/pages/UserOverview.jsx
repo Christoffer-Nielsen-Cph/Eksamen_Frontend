@@ -40,9 +40,8 @@ function UserOverview({userFacade}) {
                     <tr className={"blue"}>
                         <th>USERNAME</th>
                         <th>EMAIL</th>
-                        <th>ADDRESS</th>
-                        <th>ZIP</th>
-                        <th>CITY</th>
+                        <th>PHONE</th>
+                        <th>BILLING PER HOUR</th>
                         <th>DELETE</th>
                         <th>EDIT</th>
                     </tr>
@@ -52,16 +51,12 @@ function UserOverview({userFacade}) {
                                 <>
                                     <tr>
                                         <td>{user.userName}</td>
-                                        <td><input type="text" placeholder={"Email"} value={inputs.userEmail}
-                                                   onChange={handleChange} name={"userEmail"}/></td>
-                                        <td><input type="text" placeholder={"Address"} value={inputs.streetAddress}
-                                                   onChange={handleChange} name={"streetAddress"}/></td>
-                                        <td>{user.address.cityInfo.zipCode}</td>
-                                        <td><input type="text" placeholder={"Address"} value={inputs.cityName}
-                                                   onChange={handleChange} name={"cityName"}/></td>
+                                        <td><input type="text" placeholder={"Email"} value={inputs.userEmail} onChange={handleChange} name={"userEmail"}/></td>
+                                        <td><input type="text" placeholder={"Phone"} value={inputs.userPhone} onChange={handleChange} name={"userPhone"}/></td>
+                                        <td><input type="text" placeholder={"Billing Pr Hour"} value={inputs.userBillingPrHour} onChange={handleChange} name={"userBillingPrHour"}/></td>
                                         <td>
                                             <button className={"submitUpdate"} onClick={() => {
-                                                userFacade.updateUser(inputs.userName, inputs.userEmail, user.userPass, inputs.streetAddress, user.address.cityInfo.zipCode, user.address.cityInfo.cityName).then(() => {
+                                                userFacade.updateUser(user.userName, inputs.userEmail, inputs.userPass, inputs.userPhone, inputs.userBillingPrHour).then(() => {
                                                     setEdit(user.userName)
                                                     setRefresh(!refresh)
                                                 })
@@ -80,9 +75,9 @@ function UserOverview({userFacade}) {
                                     <tr>
                                         <td>{user.userName}</td>
                                         <td>{user.userEmail}</td>
-                                        <td>{user.address.streetAddress}</td>
-                                        <td>{user.address.cityInfo.zipCode}</td>
-                                        <td>{user.address.cityInfo.cityName}</td>
+                                        <td>{user.userPhone}</td>
+                                        <td>{user.userBillingPrHour} kr</td>
+
                                         <td>
                                             <button className={"deleteBtn"} onClick={() => {
                                                 userFacade.deleteUser(user.userName).then(() => {

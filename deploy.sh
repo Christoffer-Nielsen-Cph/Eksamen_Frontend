@@ -1,6 +1,6 @@
 #!/usr/bin/env bash
 
-PROJECT_NAME="ca2"
+PROJECT_NAME="3sem_exam"
 DROPLET_URL="167.71.40.137"
 
 ##echo -n "please enter the project name as it appears on the server in /var/www/"

@@ -176,7 +176,9 @@ button:hover {
     border-radius: 25px;
     font-family: arial, sans-serif;
     border-collapse: collapse;
-    width: 100%;
+    text-align: center;
+
+    width: 25%;
 }
 
 .tableBody td{

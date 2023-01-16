@@ -9,6 +9,8 @@ function SignUp() {
         userName: "",
         userPass: "",
         userEmail: "",
+        userPhone: "",
+        userBillingPrHour: ""
     };
     const [userCredentials, setUserCredentials] = useState(init);
     const [error, setError] = useState("")
@@ -34,12 +36,12 @@ function SignUp() {
             return
         }
 
-        signUp(userCredentials.userName, userCredentials.userPass, userCredentials.userEmail);
+        signUp(userCredentials.userName, userCredentials.userPass, userCredentials.userEmail,userCredentials.userPhone,userCredentials.userBillingPrHour);
 
     }
 
-    const signUp = (user, pass, email) => {
-        userFacade.createUser(user, pass, email)
+    const signUp = (user, pass, email,phone,billingPrHour) => {
+        userFacade.createUser(user, pass, email,phone,billingPrHour)
             .then(res => navigate("/SignUpConfirmation"))
             .catch(async err => {
                 if (err.status) {
@@ -63,10 +65,20 @@ function SignUp() {
                 <p>_________________________________________</p>
                 <label htmlFor="username"><b>Username<font color="#DC143C">*</font></b></label>
                 <input onChange={onChange} type="text" placeholder="Enter Username" name="username" id="userName"/>
+
                 <label htmlFor="password"><b>Password<font color="#DC143C">*</font></b></label>
                 <input onChange={onChange} type="password" placeholder="Enter Password" id="userPass"/>
+
                 <label htmlFor="email"><b>Email<font color="#DC143C">*</font></b></label>
                 <input onChange={onChange} type="text" placeholder="Enter Email" name="name" id="userEmail"/>
+
+                <label htmlFor="phone"><b>Phone<font color="#DC143C">*</font></b></label>
+                <input onChange={onChange} type="text" placeholder="Enter Phone" name="name" id="userPhone"/>
+
+                <label htmlFor="billing"><b>Billing Per Hour<font color="#DC143C">*</font></b></label>
+                <input onChange={onChange} type="text" placeholder="Enter Billing Per Hour" name="name" id="userBillingPrHour"/>
+
+
                 <button className="signup-btn" onClick={performSignUp} type="submit">Sign up</button>
             </form>
         </div>

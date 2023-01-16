@@ -6,22 +6,26 @@ import {API_URL} from "../../settings.js";
 function UserFacade () {
 
 
-    const createUser = (user, pass,email) => {
+    const createUser = (user, pass,email,phone,billing) => {
         const options = apiFacade.makeOptions("POST", null,
             {"userName": user,
                   "userEmail": email,
                   "userPass":pass,
+                "userPhone":phone,
+                "userBillingPrHour":billing
                  }
         )
         return fetch(API_URL + "/api/users", options)
             .then(apiFacade.handleHttpErrors)
     }
 
-   const updateUser = (username, updateEmail, updatePass) => {
+   const updateUser = (username, updateEmail, updatePass, updateUserPhone, updateUserBillingPrHour) => {
         const options = apiFacade.makeOptions("PUT", true,
             {"userName": username,
                 "userEmail": updateEmail,
                 "userPass":updatePass,
+                "userPhone": updateUserPhone,
+                "userBillingPrHour": updateUserBillingPrHour
               }
             )
         return fetch(API_URL + "/api/users/" + username, options)
