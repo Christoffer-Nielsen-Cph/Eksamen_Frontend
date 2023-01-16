@@ -30,7 +30,7 @@ function App() {
             <Routes>
                 <Route path="/" element={<Home userFacade={userFacade} setLoggedIn={setLoggedIn} loggedIn={loggedIn}/>}/>
                 <Route path="profile" element={<Profile setLoggedIn={setLoggedIn}/>}/>
-                <Route path="myrecords" element={<ProjectHourPage/>}/>
+                <Route path="myrecords" element={<ProjectHourPage userFacade={userFacade} developerFacade={developerFacade}/>}/>
                 <Route path="developerpage" element={<DeveloperPage developerFacade={developerFacade} userFacade={userFacade}/>}/>
                 <Route path="projectoverview" element={userFacade.hasUserAccess("admin",loggedIn) && <ProjectOverview adminFacade={adminFacade} userFacade={userFacade}/>}/>
                 <Route path="signin" element={!loggedIn ? <SignIn setLoggedIn={setLoggedIn}/> : <Home loggedIn={loggedIn}/>}/>

@@ -71,7 +71,7 @@ function ProjectOverview({adminFacade,userFacade}) {
             <button onClick={() => setCreateHidden(s => !s)}>{btnTextCreate()}</button>
             {!createHidden ? (<div>
                 <h3>Please fill out the information below:</h3>
-                <form onSubmit={handleSubmit} onClick={handleRefresh}>
+                <form  onSubmit={handleSubmit} onClick={handleRefresh}>
                     <label>Name of the project:</label>
                     <input type="text" placeholder="Enter name:" onChange={onChange} id={"projectName"}/>
                     <label>Description of the project:</label>

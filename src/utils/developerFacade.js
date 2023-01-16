@@ -25,13 +25,40 @@ function DeveloperFacade () {
             .then(apiFacade.handleHttpErrors)
     }
 
+    const myProjectHoursOnSpecificProject = (userName,projectId, updateAction,setErrorMessage) => {
+        return apiFacade.fetchData("developer/timeSpent/"+userName+"/"+projectId,updateAction)
+            .then(apiFacade.handleHttpErrors)
+    }
+
+    const deleteRecording = (recordId) => {
+        const options = apiFacade.makeOptions("DELETE",null,null);
+        return fetch(API_URL +"/api/developer/"+recordId,options)
+            .then(apiFacade.handleHttpErrors)
+    }
+
+    const updateMyRecording = (projectId,recordId,userName,hoursSpent,userStory,description) => {
+        const options = apiFacade.makeOptions("PUT",null,
+            {"id":recordId,
+                "projectId":projectId,
+                "userName":userName,
+                "hoursSpent":hoursSpent,
+                "userStory":userStory,
+                "description":description
+
+            })
+        return fetch(API_URL+"/api/developer/"+recordId,options)
+            .then(apiFacade.handleHttpErrors)
+    }
+
 
 
     return {
 
         myProjects,
-        recordProjectHours
-
+        recordProjectHours,
+        myProjectHoursOnSpecificProject,
+        deleteRecording,
+        updateMyRecording
     }
 }
 

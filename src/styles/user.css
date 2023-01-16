@@ -180,6 +180,11 @@ button:hover {
 
     width: 25%;
 }
+.deleteImage{
+    border: none;
+    width: 40px;
+    height: 40px;
+}
 
 .tableBody td{
     text-align: center;
