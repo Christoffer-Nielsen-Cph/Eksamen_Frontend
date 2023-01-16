@@ -105,7 +105,6 @@ function ProjectOverview({adminFacade,userFacade}) {
                     <th>Project Name</th>
                     <th>Description</th>
                     <th>Developers</th>
-                    <th>Invoice</th>
                 </tr>
                 </thead>
                 <tbody>{project.map((data) => {

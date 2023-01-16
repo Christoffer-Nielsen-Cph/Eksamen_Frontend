@@ -16,6 +16,8 @@ function Header({loggedIn, setLoggedIn}) {
 
             {loggedIn ? <NavLink className="nav-home" to="myrecords"> MY PROJECT HOURS </NavLink> : null}
 
+            {userFacade.hasUserAccess('admin',loggedIn) && (<NavLink className="nav-home" to="invoice"> INVOICES </NavLink>)}
+
             {userFacade.hasUserAccess('admin',loggedIn) && (<NavLink className="nav-home" to="useroverview"> USER OVERVIEW </NavLink>)}
 
             {userFacade.hasUserAccess('admin',loggedIn) && (<NavLink className="nav-home" to="projectoverview"> PROJECT OVERVIEW </NavLink>)}

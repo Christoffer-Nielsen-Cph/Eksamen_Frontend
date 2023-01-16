@@ -15,6 +15,7 @@ import DeveloperPage from "./pages/DeveloperPage.jsx";
 import UserOverview from "./pages/UserOverview.jsx";
 import developerFacade from "./utils/developerFacade.js";
 import ProjectHourPage from "./pages/ProjectHourPage.jsx";
+import Invoice from "./pages/Invoice.jsx";
 
 function App() {
 
@@ -37,6 +38,7 @@ function App() {
                 <Route path="/signup" element={<SignUp/>}/>
                 <Route path="useroverview" element={userFacade.hasUserAccess("admin",loggedIn) && <UserOverview userFacade={userFacade}/>}/>
                 <Route path="/SignUpConfirmation" element={<SignUpConfirmation/>}/>
+                <Route path="invoice" element={<Invoice/>}/>
                 <Route path="*" element={<h1>Page Not Found !!!!</h1>}/>
             </Routes>
 
